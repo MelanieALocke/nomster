@@ -38,3 +38,9 @@
     <% end %>
   </div>
 </div>
+
+<%= simple_form_for @comment do |f| %>
+  <%= f.input :message %>
+  <%= f.input :rating %>
+  <%= f.submit "Add a Comment", class: 'btn btn-primary' %>
+<% end %>
