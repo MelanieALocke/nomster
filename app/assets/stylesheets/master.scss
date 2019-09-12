@@ -116,10 +116,10 @@ blockquote p {
 .carousel-item-prev {
   display: block;
 }
-.carousel-control-prev-icon, .carousel-control-next-icon {
+.carousel-control-prev-icon:after, .carousel-control-next-icon:after {
   color: black;
 }
-.carousel-control-prev, .carousel-control-next {
-  color: black;
-  opacity: 0.75;
+.carousel-control-next,
+.carousel-control-prev {
+    filter: invert(100%);
 }
