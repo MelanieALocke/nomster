@@ -1,12 +1,14 @@
-<div class="booyah-box">
+<div class="booyah-box col-10 offset-1">
   <div class="row">
     <div class="col-4">
       <%= image_tag 'user.png' %>
     </div>
 
     <div class="col-8">
-      <h1><%= @user.email %></h1>
+      <h2><%= @user.email %></h2>
+      <br />
       <h3>Member Since: <%= @user.created_at.strftime("%B %d, %Y") %></h3>
+      <br />
       <h4><%= @user.comments.count %> comments</h4>
       <h4><%= @user.comments.where(rating: '5_stars').count %> 5 star reviews</h4>
     </div>
@@ -31,3 +33,30 @@
     </div>
   <% end %>
 </div>
+
+<div class="clear"></div>
+<br />
+
+<h2 class="text-center">My Places</h2>
+<br />
+
+<% @user.places.each do |place| %>
+  <div class="booyah-box col-10 offset-1">
+    <h1><%= link_to place.name, place_path(place) %></h1><br />
+    <i><%= place.address %></i><br /><br />
+    <p><%= place.description %></p><br />
+
+    <% if place.comments.present? %>
+      <div class="col-12">
+        <blockquote>
+          <% if place.comments.last.humanized_rating.present? %>
+            <b><%= place.comments.last.humanized_rating %></b>
+          <% end %>
+            <%= place.comments.last.message %>
+          <small><%= place.comments.last.user.email %></small>
+        </blockquote>
+      </div>
+    <% end %>
+
+  </div>
+<% end %>
