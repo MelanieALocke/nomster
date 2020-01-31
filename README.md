@@ -1,24 +1,16 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![Screenshot of Nomster](/app/assets/images/nomster.png)
 
-Things you may want to cover:
+# Nomster
 
-* Ruby version
+Recommend your favorite restaurants with Nomster, a yelp clone featuring user login and authentication, Google Maps API, and built on Rails.
 
-* System dependencies
+Check it out at [Nomster](https://nomster-melanie-locke.herokuapp.com/)
 
-* Configuration
+## Technologies
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Ruby on Rails
+* Google Maps API
+* Postgresql
+* Devise
